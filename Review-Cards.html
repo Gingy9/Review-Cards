@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard Review</title>
+<style>
+  /* Basic page styles */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 1s ease forwards; /* Opening animation */
+  }
+
+  /* Title */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+  }
+
+  /* Card container */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  /* Individual card */
+  .card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    padding: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Question/term */
+  .question {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  /* Answer */
+  .answer {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+  }
+
+  .card:hover .answer {
+    max-height: 200px; /* Enough to reveal content */
+    opacity: 1;
+  }
+
+  /* Opening animations */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes slideIn {
+    0% {opacity: 0; transform: translateY(-30px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+</style>
+</head>
+<body>
+
+<h1>Flashcard Review</h1>
+
+<div class="cards-container">
+  <div class="card">
+    <div class="question">What is HTML?</div>
+    <div class="answer">HTML stands for HyperText Markup Language and is used to structure web pages.</div>
+  </div>
+  <div class="card">
+    <div class="question">What is CSS?</div>
+    <div class="answer">CSS stands for Cascading Style Sheets and is used to style HTML elements.</div>
+  </div>
+  <div class="card">
+    <div class="question">What is JavaScript?</div>
+    <div class="answer">JavaScript is a programming language used to make web pages interactive.</div>
+  </div>
+  <div class="card">
+    <div class="question">What does `flexbox` do?</div>
+    <div class="answer">Flexbox is a CSS layout module that allows responsive alignment and spacing of elements.</div>
+  </div>
+  <div class="card">
+    <div class="question">What is a CSS transition?</div>
+    <div class="answer">A CSS transition smoothly changes CSS properties over a set duration.</div>
+  </div>
+  <div class="card">
+    <div class="question">What is the DOM?</div>
+    <div class="answer">The DOM (Document Object Model) represents HTML elements as objects in JavaScript.</div>
+  </div>
+  <div class="card">
+    <div class="question">What is a CSS grid?</div>
+    <div class="answer">CSS Grid is a layout system for creating complex two-dimensional layouts.</div>
+  </div>
+  <div class="card">
+    <div class="question">What is `hover` in CSS?</div>
+    <div class="answer">`:hover` is a CSS pseudo-class that applies styles when the mouse is over an element.</div>
+  </div>
+</div>
+
+</body>
+</html>
